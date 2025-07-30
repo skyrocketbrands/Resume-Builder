@@ -17,4 +17,4 @@ Enter your details → click “Generate Resume” → download your PDF instant
 - HTML
 - JavaScript
 - Vercel (hosting)
-- Private AI API (used securely with serverless functions)
+- Private AI API (sk-...fdAA
