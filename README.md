@@ -1,21 +1,20 @@
 # AI Resume Builder (Free)
 
-This is a simple resume builder powered by OpenAI.  
-It generates professional resumes based on user input, designed for free public use.
+This is a simple AI-powered tool that helps users create professional resumes based on their input.
 
-🛠 Built with HTML + JavaScript + OpenAI API  
-💼 Created to help job seekers in the US, UK, and other Western countries  
-📈 Monetized via AdSense (planned)
+🛠 Built with HTML + JavaScript + AI language model  
+💼 Designed for job seekers in the US, UK, and Western countries  
+📈 Monetized via AdSense
 
 ---
 
 ## How to Use
-Just enter your information → click “Generate Resume” → download your PDF instantly.
+Enter your details → click “Generate Resume” → download your PDF instantly.
 
 ---
 
 ## Tech Stack
 - HTML
 - JavaScript
-- OpenAI (GPT-4 or GPT-3.5 via API)
-- Vercel (for hosting)
+- Vercel (hosting)
+- Private AI API (used securely with serverless functions)
