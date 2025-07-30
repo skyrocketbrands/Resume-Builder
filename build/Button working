@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      margin: 0 20px;
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; }
+    textarea { width: 100%; max-width: 400px; height: 150px; padding: 10px; border-radius: 5px; border: none; margin-bottom: 1rem; }
+    button {
+      background: white; color: #0d0d0d;
+      padding: 0.8rem 1.5rem; border: none; border-radius: 6px;
+      font-size: 1rem; cursor: pointer; transition: .3s;
+    }
+    button:hover { background: #ccc; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      textarea { max-width: 100%; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Build Your Resume</h1>
+  <textarea id="prompt" placeholder="Tell me about your experience..."></textarea>
+  <button onclick="generate()">Generate Resume</button>
+  <pre id="output" style="margin-top:20px; white-space: pre-wrap;"></pre>
+
+  <script>
+    async function generate() {
+      const prompt = document.getElementById("prompt").value;
+      const out = document.getElementById("output");
+      out.innerText = "⏳ Generating...";
+      try {
+        const res = await fetch("/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt })
+        });
+        const data = await res.json();
+        out.innerText = data.result;
+      } catch (e) {
+        out.innerText = "Error — try again.";
+      }
+    }
+  </script>
+</body>
+</html>
